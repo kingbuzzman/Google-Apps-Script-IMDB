@@ -24,7 +24,4 @@ jobs:
         run: npm install
 
       - name: Run linters
-        uses: wearerequired/lint-action@v1
-        with:
-          eslint: true
-          prettier: true
+        run: eslint --fix-dry-run src/ 
