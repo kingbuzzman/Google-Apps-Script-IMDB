@@ -21,9 +21,7 @@ jobs:
           node-version: 14
 
       - name: Install Node.js dependencies
-        run: npm ci
-        env:
-          package-lock: false
+        run: npm install
 
       - name: Test
         run: npm test
