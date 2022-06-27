@@ -2,14 +2,26 @@ name: Tests
 
 on: [push]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+  
 jobs:
-  build:
-
+  run-linters:
+    name: Run linters
     runs-on: ubuntu-latest
 
-  steps:
-  - uses: actions/checkout@v3
-  - uses: actions/setup-node@v3
-    with:
-      node-version: 14
-  - run: npm test
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+
+      - name: Install Node.js dependencies
+        run: npm ci
+
+      - name: Test
+        run: npm test
