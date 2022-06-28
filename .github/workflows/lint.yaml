@@ -24,4 +24,4 @@ jobs:
         run: npm install --also=dev
 
       - name: Run linters
-        run: node_modules/.bin/eslint --help src/ 
+        run: node_modules/.bin/eslint --no-color src/
