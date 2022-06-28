@@ -23,6 +23,7 @@ jobs:
       - name: Install Node.js dependencies
         run: npm install --also=dev
 
-      - name: Run linters
+      - name: whats in here
         run: ls -ls
+      - name: Run linters
         run: node_modules/.bin/eslint --fix-dry-run src/ 
