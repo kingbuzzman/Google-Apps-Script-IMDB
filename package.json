@@ -6,6 +6,10 @@
     "scripts": {
       "test": "tap --reporter=terse"
     },
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/kingbuzzman/Google-Apps-Script-IMDB.git"
+    },
     "license": "MIT",
     "devDependencies": {
       "tap": "^15.1.5",
