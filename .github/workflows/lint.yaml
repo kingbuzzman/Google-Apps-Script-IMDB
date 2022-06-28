@@ -24,4 +24,4 @@ jobs:
         run: npm install --also=dev
 
       - name: Run linters
-        run: eslint --fix-dry-run src/ 
+        run: node eslint --fix-dry-run src/ 
