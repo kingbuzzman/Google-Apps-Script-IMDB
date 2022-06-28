@@ -23,5 +23,5 @@ jobs:
       - name: Install Node.js dependencies
         run: npm install --also=dev
 
-      - name: Run linters
+      - name: Run linter
         run: node_modules/.bin/eslint --no-color src/

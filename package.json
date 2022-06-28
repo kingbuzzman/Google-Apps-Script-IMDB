@@ -14,6 +14,7 @@
     "devDependencies": {
       "tap": "^15.1.5",
       "eslint": "^1.0.0",
+      "eslint-config-standard": "^1.0.0",
       "prettier": "^1.0.0"
     }
   }
