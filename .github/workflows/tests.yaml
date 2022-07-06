@@ -17,8 +17,15 @@ jobs:
 
       - name: Set up Node.js
         uses: actions/setup-node@v1
+        run: npm install @google/clasp -g
         with:
           node-version: 14
+
+      - name: Setup secret
+        run: echo "${{ secret.clasprc }}" > /root/.clasprc.json
+
+      - name: ...
+        run: clasp clone 1YG8v2_a8Rs7Z0OJaMFcnQbh2pLO9Zg8PyWxyOrdGWyP0PMgvJD-BZdmJ
 
       - name: Install Node.js dependencies
         run: npm install --also=dev
