@@ -21,10 +21,10 @@ jobs:
           node-version: 14
 
       - name: Install Node.js dependencies
-        run: npm install --also=dev
+        run: npm install --also=dev -g
 
       - name: Inspect
         run: ls -lsah node_modules/eslint-config-standard
 
       - name: Run linter
-        run: node_modules/.bin/eslint --no-color src/
+        run: eslint --no-color src/
