@@ -24,7 +24,7 @@ jobs:
         run: npm install @google/clasp -g
 
       - name: Set up secret
-        run: echo "${{ secrets.clasprc }}" > /root/.clasprc.json
+        run: echo "${{ secrets.clasprc }}" > ~/.clasprc.json
 
       - name: ...
         run: clasp clone 1YG8v2_a8Rs7Z0OJaMFcnQbh2pLO9Zg8PyWxyOrdGWyP0PMgvJD-BZdmJ
