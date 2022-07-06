@@ -23,8 +23,5 @@ jobs:
       - name: Install Node.js dependencies
         run: npm install --also=dev -g
 
-      - name: Inspect
-        run: ls -lsah node_modules/eslint-config-standard
-
       - name: Run linter
         run: eslint --no-color src/

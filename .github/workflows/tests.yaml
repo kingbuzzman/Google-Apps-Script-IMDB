@@ -31,4 +31,5 @@ jobs:
         run: npm install --also=dev
 
       - name: Test
-        run: npm ../test
+        working-directory: ..
+        run: npm test
