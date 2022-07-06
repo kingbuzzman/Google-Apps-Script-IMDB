@@ -20,17 +20,15 @@ jobs:
         with:
           node-version: 14
 
-      - name: Set up dependencies
-        run: npm install @google/clasp -g
-
-      - name: Set up secret
-        run: echo '${{ secrets.clasprc }}' > ~/.clasprc.json
-
-      - name: ...
-        run: clasp clone 1YG8v2_a8Rs7Z0OJaMFcnQbh2pLO9Zg8PyWxyOrdGWyP0PMgvJD-BZdmJ
+      - name: Set up clasp
+        working-directory: ./src
+        run: |
+          npm install @google/clasp -g
+          echo '${{ secrets.clasprc }}' > ~/.clasprc.json
+          clasp clone 1YG8v2_a8Rs7Z0OJaMFcnQbh2pLO9Zg8PyWxyOrdGWyP0PMgvJD-BZdmJ
 
       - name: Install Node.js dependencies
         run: npm install --also=dev
 
       - name: Test
-        run: npm test
+        run: npm ../test
